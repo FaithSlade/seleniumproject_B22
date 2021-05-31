@@ -27,7 +27,7 @@ public class P03_Apple_task {
             //System.out.println(headerLinks.get(eachLink).getText());
 
             headerLinks.get(eachLink).click();
-            Thread.sleep(1000);
+            Thread.sleep(5000);
             headerLinks = driver.findElements(By.xpath("//ul[@class='ac-gn-list']//li/a"));
 
             //4. Print out the titles of the each page
