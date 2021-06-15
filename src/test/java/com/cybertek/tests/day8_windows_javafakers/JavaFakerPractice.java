@@ -1,4 +1,4 @@
-package com.cybertek.tests.day8;
+package com.cybertek.tests.day8_windows_javafakers;
 
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;

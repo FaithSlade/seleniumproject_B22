@@ -1,4 +1,4 @@
-package com.cybertek.tests;
+package com.cybertek.tests.day8_windows_javafakers;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class day8_windows_javafaker {
+public class Something {
     WebDriver driver;
 
     @BeforeMethod
