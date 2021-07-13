@@ -1,42 +1,22 @@
 package com.cybertek.tests.day10_webtable_properties_practices;
 
+import com.cybertek.tests.base.TestBase;
 import com.cybertek.utilities.ConfigurationReader;
-import com.cybertek.utilities.WebDriverFactory;
+import com.cybertek.utilities.TableUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
-public class Table_Task {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setupMethod(){
-
-        String browser = ConfigurationReader.getProperty("browser");
-        //This line returns String : chrome
-
-        String url = ConfigurationReader.getProperty("dataTablesUrl");
-        //This line returns String : http://practice.cybertekschool.com/tables#edit
-
-        driver = WebDriverFactory.getDriver(browser);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get(url);
-        // below code is same as above
-        //driver.get(ConfigurationReader.getProperty("dataTablesUrl"));
-
-    }
+public class Table_Task extends TestBase {
 
     @Test
-    public void task3_return_tims_due_amount(){
-
-        ////table[@id='table1']//td[.='Tim'] --> this locator locates Tim's cell regardless
+    public void task3_return_times_due_amount(){
+        // below code is same as above
+        //driver.get(ConfigurationReader.getProperty("dataTablesUrl")); you don't need to store it in String
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
+        // //table[@id='table1']//td[.='Tim'] --> this locator locates Tim's cell regardless
         // of which row he is in
 
         //2.	Locate first table and verify Tim has due amount of “$50”
@@ -58,11 +38,14 @@ public class Table_Task {
 
     @Test
     public void task4_verify_order_method(){
-        //TableUtils.verifyOrder(driver, "Tim");
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
+        TableUtils.verifyOrder(driver, "Tim");
     }
     @Test
     public void task5_print_all_names_and_emails(){
-        //TableUtils.printNamesAndEmails(driver);
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
+        TableUtils.printNamesAndEmails(driver);
     }
-
 }

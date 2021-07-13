@@ -19,7 +19,6 @@ public class TableUtils {
 
         for (WebElement each : allNames) {
             if (each.getText().equals(name)){
-
                 Assert.assertTrue(true);
                 return;
             }
@@ -27,9 +26,8 @@ public class TableUtils {
 
         //Assert.fail("this line will fail the code");
 
-        Assert.assertTrue(false, "Name does not exist in the list.");
+        //Assert.assertTrue(false, "Name does not exist in the list.");
     }
-
     //task 5 - create new method to print out names and emails
     public static void printNamesAndEmails(WebDriver driver){
 
@@ -47,4 +45,7 @@ public class TableUtils {
         }
     }
 }
+
+
+
 
